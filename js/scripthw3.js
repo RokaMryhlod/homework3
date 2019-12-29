@@ -189,11 +189,11 @@
 // function eval2 (a, b){
 // 	let par = " ";
 // 	let nepar = " ";
-// 	for (i = a; i <= b; i++){
+// 	for (let i = a; i <= b; i++){
 // 		if(i%2 === 0){
 // 			par += i + ", ";
 // 		}
-// 		else if (i%2 === 1){
+// 		else {
 // 			nepar += i + ", ";
 // 		}	
 
@@ -204,7 +204,9 @@
 // eval2 (1, 20);
 
 
-
+// Завдання 8:
+// Змінна і в циклі має бути оголошена 
+// через let. else if не потрібен. Достатньо буде просто else використати
 
 
 
@@ -316,9 +318,16 @@
 // Якщо другий параметр true, то треба зробити перевірку. Якщо в згаданій стрічці є 
 // хоча би одна буква ‘a’, то ми виходимо з циклу.
 
+
 // function testmy(str1, boolean1){
-// 	if (boolean1 == true){
-//             for (i = 0; i <= str1.length-1; i++){
+// 	if (boolean1 === false){
+// 		 for (i = 0; i <= str1.length-1; i++){ 
+// 		    console.log(str1[i]);
+// 		 }
+// 	}
+
+// 	else {
+//             for (i = 0; i <= str1.length-1; i++){           	
 // 	           if (str1[i] === "a") break;
 //                else {
 // 					 console.log(str1[i]);
@@ -331,14 +340,18 @@
 
 
 
-
-
 // 14.2 Якщо другий параметр рівний false, то робимо ту саму перевірку, але, в цьому
 //  випадку ми не виходимо з циклу, а переходимо до наступної ітерації. 
 // Тут вам допоможуть break or continue 
 
 // function testmy(str1, boolean1){
-// 	if (boolean1 == false){
+// 		if (boolean1 === true){
+// 		  for (i = 0; i <= str1.length-1; i++){ 
+// 		    console.log(str1[i]);
+// 		  }
+// 	    }
+
+// 	else {
 // 			for (i = 0; i <= str1.length-1; i++){
 // 	           if (str1[i] === "a") continue;
 //                else {
@@ -361,7 +374,7 @@
 
 // function reverse(a){
 // 	let res = " ";
-// 	for (var i = a.length - 1; i >= 0; i--) {
+// 	for (let i = a.length - 1; i >= 0; i--) {
 // 		res += a[i];
 // 	}
 // 	console.log(res);
@@ -381,31 +394,32 @@
 // І так до 10. 
 
 
-// let a = prompt("enter any number");
-// function powertable(a){
-
-// 		for (var i = 0; i < 10; i++) {
+// 
+// function powertable(){
+// 	let a = prompt("enter any number");
+// 		for (let i = 0; i < 10; i++) {
 // 		 console.log( a + " * " + i + " = "  + a * i);
 
 // 		}
 // }
-// powertable(a);
+// powertable();
 
 // 16. Наступною умовою буде попросити користувача ввести число до якого би він хотів бачити цю
  // таблицю множення a * b = x - ??. кінцеве значення
 
 
 
-// let a = prompt("enter any number");
-// let b = prompt("enter any number");
-// function powertable(a){
+
+// function powertable(){
+// 	let a = prompt("enter any number");
+//     let b = prompt("enter any number");
 
 // 		for (var i = 0; i <= b; i++) {
 // 		 console.log( a + " * " + i + " = "  + a * i);
 
 // 		}
 // }
-// powertable(a, b);
+// powertable();
 
 
 
@@ -426,48 +440,38 @@
 // чи непрарні, а друга має рахувати їхню суму.
 
 
-
+// function oddnum(){
 // let a = prompt("enter any numbers");
 // let b = prompt("enter odd or even");
 // let par = "";
 // let nepar = "";
-// function oddnum(a, b){
-// 	for (var i = 0; i <= a.length-1; i++) {	
-// 		if (i%2 === 0) { 
-// 			par += a[i] + ",";
-// 		}
-// 		else if (i%2 === 1){
-// 			nepar += a[i] + ",";
-// 		}
-
-		
-// 		}	
-// 		if(b === "even"){
-// 			console.log("1. парні —" + par);
-// 		}
-// 		else if (b === "odd"){
-// 			console.log("1. непарні —" + nepar);
-// 		}	
-// 	}
-
-
-
-// function sum_digits_from_string(dstr) {
+//   for (var i = 0; i <= a.length-1; i++) {  
+//     if (i%2 === 0) { 
+//       par += a[i] + ",";
+//     }
+//     else if (i%2 === 1){
+//       nepar += a[i] + ",";
+//     }
+//    }  
+// function sumDigits(dstr) {
 //   var dsum = 0;
 
 //   for (var i = 0; i < dstr.length; i++)
 //   {
-
 //     if (/[0-9]/.test(dstr[i])) dsum += parseInt(dstr[i])
 //   }
 //   return dsum;
 // }
 
-// oddnum(a, b);
-// console.log("сума парних " + sum_digits_from_string(par));
-// console.log("сума непарних " + sum_digits_from_string(nepar));
+//     if(b === "even"){
+//       console.log("1. парні —" + par + " сума парних " + sumDigits(par));
+//     }
+//     else if (b === "odd"){
+//       console.log("1. непарні —" + nepar  + " сума непарних " + sumDigits(nepar));
+//     }  
+//   }
 
-
+// oddnum();
 
 
 
@@ -501,21 +505,18 @@
 // Наприклад “John Doe”. Функція повинна вивести скорочену форму - ‘John D.’. 
 // Якщо ввели тільки 1 слово, то виводимо в консоль, що прізвище не вказано.
 
+
+// function myFunction() {	
 // let str = prompt("enter name "); 
-// let str2 = prompt("enter 2nd name "); 
+//    if(str.indexOf(' ') <= 0){
+//     console.log("прізвище не вказано");
+//    }
+//    else{
+//    	console.log(str.slice(0, str.indexOf(' ')) + " " + str[str.indexOf(' ') + 1] + "." );
+//    }
+// }
 
-// function myFunction(str, str2) {	
-// 	if (str2 === null){
-// 	  	console.log("прізвище не вказано");
-// 	 }
-// 	else{
-// 		console.log(str, str2.slice(0, 1));
-// 	}
-// } 
-// myFunction(str, str2);
-
-
-
+// myFunction();
 
 
 
@@ -545,7 +546,7 @@
 // function conct(str, num){
 // 	let result = "";
 // 	for (let i = 0; i < num12; i++) {
-// 		result = result + str;
+// 		result += str;
 // 	}
 // 	console.log(result);
 // }
@@ -593,9 +594,7 @@
 // “QwerTy” i “aSDWERT” -> false.
 
 // function comp(a, b){
-// 	a = a.toUpperCase();
-//  b = b.toUpperCase();
-//  console.log(a === b);
+//  console.log(a.toUpperCase() === b.toUpperCase());
 
 // }
 
